@@ -1,48 +1,48 @@
 # Titanic_Machine_Learning_from_Disaster
 
-## Contexto del problema
-Este reto trata de analizar los datos de los pasajeros que se encontraban en el titanic con el objetivo de realizar feature engineering, limpieza y transformacion de datos con el objetivo de entrenar un modelo de Machine Learning y predecir la supervivencia de los pasajeros.
+## Contexto del problema:
 
-## Propuesta de la solución
+Este desafío se enfoca en el análisis de datos de los pasajeros a bordo del Titanic, con el objetivo de realizar ingeniería de características, limpieza y transformación de datos para entrenar un modelo de aprendizaje automático y predecir la supervivencia de los pasajeros.
 
-### Herramientas utilziadas
-Se utilizaron diferentes liberiras para la solucion, principalmente utilizamos las siguientes librerias:
+## Propuesta de la solución:
 
-  -  Scikit Learn
-  -  Numpy
-  -  Swaborn
-  -  Pandas
+### Herramientas utilizadas:
 
-### Exploración y preprocesamiento de los datos
-El primer paso fue la exploración, para ello se deben de explorar cada uno de los atributos del dataframe, esto con el objetivo de llenar los datos faltantes en caso de que existan, observar la distribucion para realizar el balanceo y finalmente identificamos los posibles atrivutos que esten relacionados para generar nuevos atributos y finalmente manejando los outlayers para evitar posibles desviaciones de nuestro resultado
+Para abordar este problema, empleamos diversas bibliotecas, siendo las más destacadas las siguientes:
 
-### Clasificadores
-Para la solución decidimos utilizar diferentes clasificadores, esto con el objetivo de identificar el clasificador que despues de entrenar los datos obtendria el mejor accuracy, los clasificadores que decidimos utilizar fueron:
+  - Scikit-Learn
+  - Numpy
+  - Seaborn
+  - Pandas
+
+### Exploración y preprocesamiento de los datos:
+
+El primer paso crítico fue la exploración exhaustiva de los atributos en el conjunto de datos. Esta fase es fundamental para tratar datos faltantes, equilibrar la distribución de clases, identificar relaciones entre atributos para crear nuevas características y gestionar valores atípicos que podrían sesgar nuestros resultados.
+
+### Clasificadores:
+
+Para resolver este problema, implementamos varios clasificadores con el objetivo de determinar cuál de ellos ofrecía el mejor rendimiento en términos de precisión. Los clasificadores que evaluamos incluyen:
 
   - Random Forest
-  - LDA
+  - LDA (Análisis Discriminante Lineal)
   - Stratified K-fold Cross Validation
-  - Knearest Neighbors
+  - K-Nearest Neighbors (KNN)
   - PyTorch
   - Gaussian Naive Bayes
 
-## Problemas encontrados
+## Problemas encontrados:
 
-### Balance del dataframe
-Nos percatamos de que en el dataframe existia un desbalance entre el numero de sobrevivientes y el numero de fallecidos, existian un mayor numero de pasajeros fallecidos que de sobrevivientes, lo cual podria causar una mejor clasificacion para las personas fallecidas, por ello decidimos aumentar el numero sobrevivientes para tener el mismo numero y obtener mejores resultados.
+### Balance del dataframe:
+Identificamos un desequilibrio en el número de sobrevivientes y fallecidos en el conjunto de datos. Había más pasajeros fallecidos que sobrevivientes, lo que podría llevar a una mejor clasificación de las personas fallecidas. Para abordar esto, aplicamos técnicas de sobremuestreo para igualar el número de muestras de ambas clases y mejorar nuestros resultados.
 
-### Gran cantidad de datos faltantes
-Varios atributos poseian datos faltantes, existen diferentes metodos para llenar estos datos como la moda, media y mediana, la manera en la cual nosotros llenamos estos datos fue con el metodo de KNN, este metodo llena los datos faltantes utilizando como referencia datos similares de otros datos, con esto aseguramos que todos los datos faltantes no tendran el mismo resultado siempre.
+### Gran cantidad de datos faltantes:
+Varios atributos presentaban valores faltantes, y para abordar esta problemática, empleamos el método K-Vecinos Más Cercanos (KNN) para imputar los datos faltantes. Este enfoque utilizó datos similares de otras muestras para llenar los valores faltantes, garantizando una imputación más precisa y variada.
 
-De igual forma nuestro dataframe contenia un atributo que el 77.9% de sus datos eran faltantes, decidimos eliminar esta columna ya que al utilizar metodos para llenar estos datos como la media, moda, mediana o uncluso el metodo de KNN llegariamos a tener una gran cantidad de datos repetidos los cuales no nos servirian para una buena clasificación
+### Eliminación de atributos con datos mayoritariamente faltantes:
+Encontramos un atributo en el que el 77.9% de sus valores eran faltantes. Dada la gran proporción de datos faltantes, decidimos eliminar esta columna, ya que llenarla con métodos tradicionales generaría una gran cantidad de datos repetidos que no serían útiles para una clasificación precisa.
 
-### Outlayers
-Existian algunos datos que se salian mucho del promedio de los demas datos, esto podria afectar el resultado de nuestros clasificadores y por ello mismo decidismo eliminarlos para evitarlos y quedarnos simplemente con los datos fueran cercanos a la media.
+### Manejo de valores atípicos (outliers):
+Observamos que algunos datos se alejaban significativamente de la media de otros datos. Estos valores atípicos podrían afectar negativamente el rendimiento de nuestros clasificadores. Como solución, optamos por eliminar estos valores atípicos para mantener un conjunto de datos más cercano a la media.
 
-### Falta de TrueLabels
-Al momento de clasificar nuestro dataframe, no contabamos con las TrueLabels provenientes de la plataforma de Kaggle, esto genero problemas debido a que puede que los valores de nuestra X_test sean diferentes a nuestras X_train, lo cual disminuyo nuestro accuaracy de nuestros modelos.
-
-
-
-
-
+### Falta de True Labels:
+Una limitación importante fue la falta de etiquetas verdaderas (True Labels) al momento de la clasificación. Esto generó desafíos, ya que los valores de nuestro conjunto de prueba (X_test) podrían diferir de los de nuestro conjunto de entrenamiento (X_train), lo que afectó negativamente la precisión de nuestros modelos.
