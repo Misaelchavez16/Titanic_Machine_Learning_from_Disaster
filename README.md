@@ -1,5 +1,11 @@
 # Titanic_Machine_Learning_from_Disaster
 
+## Miembros del equipo
+  Hecto Miranda Garcia A01658845
+  Misael Chavez Ramos A01659759
+  Victor hugo Portilla Ortiz A01659198
+  German Wong del Toro A01655080
+ 
 ## Link al Colab
 https://colab.research.google.com/github/Misaelchavez16/Titanic_Machine_Learning_from_Disaster/blob/main/Titanic.ipynb
 
