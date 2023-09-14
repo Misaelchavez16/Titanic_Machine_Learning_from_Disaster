@@ -1,5 +1,8 @@
 # Titanic_Machine_Learning_from_Disaster
 
+## Link al Colab
+https://colab.research.google.com/github/Misaelchavez16/Titanic_Machine_Learning_from_Disaster/blob/main/Titanic.ipynb
+
 ## Contexto del problema:
 
 Este desafío se enfoca en el análisis de datos de los pasajeros a bordo del Titanic, con el objetivo de realizar ingeniería de características, limpieza y transformación de datos para entrenar un modelo de aprendizaje automático y predecir la supervivencia de los pasajeros.
